@@ -1,0 +1,76 @@
+<!-- Hero Section -->
+<div class="bg-primary text-white py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold">Welcome to ERetail Store</h1>
+        <p class="lead">Discover amazing products at unbeatable prices. Shop with confidence and enjoy fast, free shipping on all orders.</p>
+        <a routerLink="/products" class="btn btn-light btn-lg">
+          <i class="fas fa-shopping-bag me-2"></i>
+          Shop Now
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" 
+             alt="Shopping" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center mb-4">
+        <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+             style="width: 80px; height: 80px;">
+          <i class="fas fa-shipping-fast fa-2x text-primary"></i>
+        </div>
+        <h4>Fast Shipping</h4>
+        <p class="text-muted">Free shipping on all orders over $50. Get your products delivered quickly and safely.</p>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+             style="width: 80px; height: 80px;">
+          <i class="fas fa-shield-alt fa-2x text-primary"></i>
+        </div>
+        <h4>Secure Shopping</h4>
+        <p class="text-muted">Your data is protected with industry-standard security measures and encryption.</p>
+      </div>
+      <div class="col-md-4 text-center mb-4">
+        <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+             style="width: 80px; height: 80px;">
+          <i class="fas fa-headset fa-2x text-primary"></i>
+        </div>
+        <h4>24/7 Support</h4>
+        <p class="text-muted">Our customer support team is available around the clock to help you.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Products Section -->
+<div class="py-5 bg-light">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2>Featured Products</h2>
+        <p class="text-muted">Check out our most popular items</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4" *ngFor="let product of featuredProducts">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <a routerLink="/products" class="btn btn-primary btn-lg">
+          View All Products
+          <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
+import { ProductCardComponent } from '../../components/product-card/product-card.component';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule, RouterModule, ProductCardComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
+})
+export class HomeComponent implements OnInit {
+  featuredProducts: Product[] = [];
+
+  constructor(private productService: ProductService) { }
+
+  ngOnInit(): void {
+    this.loadFeaturedProducts();
+  }
+
+  loadFeaturedProducts(): void {
+    this.productService.getProducts().subscribe(products => {
+      // Get the first 4 products as featured
+      this.featuredProducts = products.slice(0, 4);
+    });
+  }
+}
